@@ -3,6 +3,7 @@ class Artist
 
   define_method(:initialize) do |name|
     @name = name
+    @albums = []
   end
 
   define_method(:name) do
@@ -11,6 +12,14 @@ class Artist
 
   define_method(:save) do
     @@artists.push(self)
+  end
+
+  define_method(:add_album) do |album|
+    @albums.push(album)
+  end
+
+  define_method(:albums) do
+    @albums
   end
 
   define_singleton_method(:all) do

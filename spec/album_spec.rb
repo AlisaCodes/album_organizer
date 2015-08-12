@@ -8,21 +8,24 @@ describe(Album) do
 
   describe('#title') do
     it('returns the title of the album') do
-      test_album = Album.new("Bob Dylan", "The Other Side of Bob Dylan", 2007)
+      test_artist = Artist.new("Bob Dylan")
+      test_album = Album.new(test_artist, "The Other Side of Bob Dylan", 2007)
       expect(test_album.title()).to(eq("The Other Side of Bob Dylan"))
     end
   end
 
   describe('#artist') do
     it('returns the artist of the album') do
-      test_album = Album.new("Bob Dylan", "The Other Side of Bob Dylan", 2007)
-      expect(test_album.artist()).to(eq("Bob Dylan"))
+      test_artist = Artist.new("Bob Dylan")
+      test_album = Album.new(test_artist, "The Other Side of Bob Dylan", 2007)
+      expect(test_album.artist()).to(eq(test_artist))
     end
   end
 
   describe('#year') do
     it('returns the year the album was created') do
-      test_album = Album.new("Bob Dylan", "The Other Side of Bob Dylan", 2007)
+      test_artist = Artist.new("Bob Dylan")
+      test_album = Album.new(test_artist, "The Other Side of Bob Dylan", 2007)
       expect(test_album.year()).to(eq(2007))
     end
   end
