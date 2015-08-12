@@ -30,10 +30,10 @@ class Album
     @@album.clear()
   end
 
-  define_singleton_method(:find) do |artist|
+  define_singleton_method(:find) do |key|
     found_albums = []
     @@album.each() do |album|
-      if album.artist() == artist
+      if album.artist() == key || album.title() == key || album.year() == key
         found_albums.push(album)
       end
     end

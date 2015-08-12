@@ -47,6 +47,16 @@ describe(Album) do
       test_album.save()
       expect(Album.find('Bob Dylan')).to(eq([test_album]))
     end
+    it('finds the album by title') do
+      test_album = Album.new("Bob Dylan", "Blonde on Blonde", 1966)
+      test_album.save()
+      expect(Album.find('Blonde on Blonde')).to(eq([test_album]))
+    end
+    it('finds the album by year') do
+      test_album = Album.new("Bob Dylan", "Blonde on Blonde", 1966)
+      test_album.save()
+      expect(Album.find(1966)).to(eq([test_album]))
+    end
   end
 
 end
