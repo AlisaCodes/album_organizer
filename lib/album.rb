@@ -29,4 +29,14 @@ class Album
   define_singleton_method(:clear) do
     @@album.clear()
   end
+
+  define_singleton_method(:find) do |artist|
+    found_albums = []
+    @@album.each() do |album|
+      if album.artist() == artist
+        found_albums.push(album)
+      end
+    end
+    found_albums
+  end
 end
